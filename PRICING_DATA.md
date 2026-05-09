@@ -1,7 +1,5 @@
 # PRICING_DATA.md
 All prices in USD. Verified week of 2026-05-09.
-Replace YYYY-MM-DD with today's date when you paste this in.
-
 ---
 
 ## Cursor
