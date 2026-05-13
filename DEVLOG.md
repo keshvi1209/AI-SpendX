@@ -42,3 +42,27 @@ not included in the base shadcn init. Wasted 20 minutes debugging.
 **Plan for tomorrow:**
 Build the audit engine in src/lib/auditEngine.ts as a pure function.
 Write Vitest tests before wiring it to the UI.
+
+## Day 3 — 2026-05-13
+
+**Hours worked:** 6
+
+**What I did:**
+Built the audit engine as a pure TypeScript function in src/lib/auditEngine.ts.
+Wrote 10 Vitest tests covering all 8 tools — all pass. Set up GitHub Actions CI
+(.github/workflows/ci.yml) — green checkmark on latest commit. Wired the engine
+to /audit page to verify output with real form data.
+
+**What I learned:**
+Writing the tests before the full UI forced me to think about edge cases I'd have
+missed — e.g. the "redundant IDE" case (paying for both Cursor and Copilot) only
+occurred to me when I asked "what inputs would be wrong to flag?"
+
+**Blockers / what I'm stuck on:**
+The Gemini Ultra savings calculation returns a floating-point number ($229.99000...)
+instead of a clean integer. Fixed by rounding in the display layer rather than the
+engine — keeps the engine's output honest.
+
+**Plan for tomorrow:**
+Build the audit results page (MVP feature 3). Focus on the hero savings number
+and the per-tool breakdown cards. The Credex CTA block for >$500/mo savings.
