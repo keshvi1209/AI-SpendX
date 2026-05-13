@@ -66,3 +66,25 @@ engine — keeps the engine's output honest.
 **Plan for tomorrow:**
 Build the audit results page (MVP feature 3). Focus on the hero savings number
 and the per-tool breakdown cards. The Credex CTA block for >$500/mo savings.
+
+
+**Hours worked:** 5
+
+**What I did:**
+Built the full audit results page with SavingsHero, FindingCard, and CredexCTA
+components. Wired the Anthropic API via /api/summary with graceful fallback to
+template text. Wrote PROMPTS.md documenting the prompt and what I tried.
+The results page now shows real savings numbers from the audit engine.
+
+**What I learned:**
+The Anthropic SDK requires at least one message in the messages array —
+you can't drive it purely from the system prompt. Also learned that without
+a word count constraint the model outputs ~280 words, which breaks the card layout.
+
+**Blockers / what I'm stuck on:**
+The AI summary sometimes takes 3-4 seconds to load. Added a spinner state
+so the UI doesn't look broken while it fetches.
+
+**Plan for tomorrow:**
+Build MVP features 5 and 6: Supabase lead capture, Resend transactional
+email, and unique shareable URLs with OG meta tags.
